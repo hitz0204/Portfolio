@@ -129,8 +129,8 @@ footer {
 .nav-desktop { display: none; }
   .nav-mobile {
     position: fixed;
-    /* top: 1.5vh; */
-    top: 46px;
+    top: 1vh;
+    
     /* left: 80.5vw; */
     right: calc(var(--mobile-column-margin-right) + var(--mobile-column-gap));
     z-index: 50;
