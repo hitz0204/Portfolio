@@ -177,6 +177,8 @@ img, video {
         grid-column: span 3;
     }
 
+.img-full div{grid-column: span 6;}
+
 .final-posters video{
         display: none;
     }
@@ -230,6 +232,8 @@ img, video {
     }
 
     .img-scroll div { grid-column: span 8; }
+
+    .img-full div{grid-column: span 8;}
 
     .img-half div, .img-half a{
         grid-column: span 4;
