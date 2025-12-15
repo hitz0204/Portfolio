@@ -1,0 +1,570 @@
+
+@media only screen and (max-width: 600px) {
+    .about{
+    margin-top: 10vh;
+    grid-template-areas: 
+    ". heading heading heading heading . "
+    ". img img img img . "
+    " text  text text text text text"
+    ;
+}
+
+.about h2{
+grid-area: heading;
+justify-self: center;
+}
+
+.about p{
+grid-area: text;
+margin-top: 1.5vh;
+}
+
+#aboutImg{
+grid-area: img;
+width: 100%;
+overflow: hidden;
+
+display: inline-block;
+justify-content: center;
+align-items: center;
+height: auto;
+position: relative;
+}
+
+#aboutImg img{
+width: 100%;
+height: auto;
+}
+
+
+#defaultCanvas0{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.work{
+    margin-top: 15vh;
+}
+.work h2{
+    grid-column-start: 1;
+}
+
+.work-container{
+    margin-top: 10vh;
+    grid-template-rows: auto;
+    row-gap: 30px;
+    grid-template-areas: 
+    "title title title title title title"
+    "img img img img img img"
+    "descripition descripition descripition descripition descripition descripition"
+    "date . tags tags . ."
+    "view view view view view view"
+    "nr nr nr nr nr nr"
+}
+
+#work > div:nth-child(2){
+    margin-top: 5vh;
+}
+
+
+.work-image-container{
+    grid-area: img;
+    width: 100%;
+}
+
+.work-container img{
+    width: 100%;
+}
+
+.work-container .date{
+    grid-area: date;
+}
+.work-container .tags{
+    grid-area: tags;
+}
+.work-container .descripition{
+    grid-area: descripition;
+}
+.work-container a{
+    grid-area: view;
+    /* grid-column-start: 3; */
+}
+
+.view-project{
+    display: none;
+}
+
+.work-container h5{
+    grid-area: nr;
+    align-self: center;
+    justify-self: center;
+    font-size: 32px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.work-container h3{
+    grid-area: title;
+    opacity: 100%;
+    font-size: 32px;
+}
+
+.work-container button{
+    background-color: var(--fg);
+    color: var(--bg);
+    border: none;
+    padding: 2.5% 5% 2.5% 5%;
+    justify-self: end;
+}
+.work-container a{
+    color: var(--fg);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+#heroCanvasIndex{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    grid-column: span 6;
+    opacity: 50%;
+}
+
+.hero{
+    position: relative;
+    margin-top: 5vh;
+    grid-template-areas: 
+    "canvas canvas canvas canvas canvas canvas"
+    "first-name first-name first-name last-name last-name last-name "
+    "port port port port port port"
+}
+
+#heroCanvasIndex #defaultCanvas0{
+    border-radius: 2vw;   
+}
+
+
+body > section.hero > p{
+    justify-self: center;
+    margin-top: 1.25vh;
+    
+} 
+
+
+body > section.hero.grid > h1:nth-child(3), body > section.hero.grid > h1:nth-child(2){
+    font-size: 70px;
+    line-height: 50px;
+}
+
+body > section.hero.grid > h1:nth-child(2){
+    grid-area: first-name;
+}
+
+body > section.hero.grid > h1:nth-child(3){
+    grid-area: last-name;
+    justify-self: end;
+}
+
+body > section.hero.grid > div:nth-child(4){
+    grid-area: port;
+    text-align: center;
+    justify-self: center;
+}
+body > section.hero.grid > div:nth-child(4) > h2{
+    font-size: 40px;
+}
+
+
+}
+/****************************************************************************************************/
+
+
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+
+    .hero-mobile{
+        display: none;
+    }
+
+    .about{
+    margin-top: 10vh;
+    grid-template-areas: 
+    "heading heading heading . img img img img"
+    "text text text . img img img img"
+}
+
+.about h2{
+grid-area: heading;
+
+}
+
+.about p{
+grid-area: text;
+position: relative;
+top: -10vh;
+}
+
+#aboutImg{
+grid-area: img;
+width: 100%;
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+height: auto;
+position: relative;
+max-height: 80vh;
+}
+
+#aboutImg img{
+width: 100%;
+height: auto;
+}
+
+
+#defaultCanvas0{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.work{
+    margin-top: 15vh;
+}
+.work h2{
+    grid-column-start: 1;
+}
+
+.work-container{
+    margin-top: 10vh;
+    grid-template-rows: auto;
+    row-gap: 30px;
+    grid-template-areas: 
+    "title title title title title title title title"
+    "img img img img img img img img"
+    "descripition descripition descripition descripition descripition descripition descripition descripition"
+    "date . tags tags . . . ."
+    "view view view view view view view view"
+    "nr nr nr nr nr nr nr nr"
+}
+
+#work > div:nth-child(2){
+    margin-top: 5vh;
+}
+
+
+.work-image-container{
+    grid-area: img;
+    width: 100%;
+}
+
+.work-container img{
+    width: 100%;
+}
+
+.work-container .date{
+    grid-area: date;
+}
+.work-container .tags{
+    grid-area: tags;
+}
+.work-container .descripition{
+    grid-area: descripition;
+}
+.work-container a{
+    grid-area: view;
+
+}
+
+.view-project{
+    display: none;
+}
+
+.work-container h5{
+    grid-area: nr;
+    align-self: center;
+    justify-self: center;
+    font-size: 32px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.work-container h3{
+    grid-area: title;
+    opacity: 100%;
+    font-size: 32px;
+}
+
+.work-container button{
+    background-color: var(--fg);
+    color: var(--bg);
+    border: none;
+    padding: 2.5% 5% 2.5% 5%;
+    justify-self: end;
+}
+.work-container a{
+    color: var(--fg);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+
+
+#heroCanvasIndex{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    grid-column: span 8;
+    opacity: 50%;
+}
+
+.hero{
+    position: relative;
+    margin-top: 5vh;
+    grid-template-areas: 
+    "canvas canvas canvas canvas canvas canvas canvas canvas   "
+    "first-name first-name first-name port port last-name last-name last-name "
+}
+
+#heroCanvasIndex #defaultCanvas0{
+    border-radius: 2vw;   
+}
+
+
+body > section.hero > p{
+    justify-self: center;
+    margin-top: 1.25vh;
+    
+} 
+
+
+body > section.hero.grid > h1:nth-child(3), body > section.hero.grid > h1:nth-child(2){
+    font-size: 15vw;
+    line-height: 150px;
+    margin-top: 30px;
+}
+
+body > section.hero.grid > h1:nth-child(2){
+    grid-area: first-name;
+}
+
+body > section.hero.grid > h1:nth-child(3){
+    grid-area: last-name;
+    justify-self: end;
+}
+
+body > section.hero.grid > div:nth-child(4){
+    grid-area: port;
+    text-align: center;
+    justify-self: center;
+    align-self: flex-end;
+}
+body > section.hero.grid > div:nth-child(4) > h2{
+    font-size: 40px;
+}
+
+
+
+}
+
+
+
+
+
+/**********************************************************************************************/
+@media only screen and (min-width: 1400px) {
+    .hero-mobile{
+        display: none;
+    }
+
+    .about{
+    margin-top: 10vh;
+    grid-template-areas: 
+    ".  heading heading heading .  img img img img ."
+    ".  text text text .  img img img img ."
+    ;
+}
+
+.about h2{
+grid-area: heading;
+}
+.about p{
+position: relative;
+top: -20%;
+grid-area: text;
+
+}
+
+#aboutImg{
+grid-area: img;
+width: 100%;
+overflow: hidden;
+
+display: inline-block;
+justify-content: center;
+align-items: center;
+max-height: 80vh;
+position: relative;
+}
+
+#aboutImg img{
+width: 100%;
+height: auto;
+}
+
+#defaultCanvas0{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.work{
+    margin-top: 20vh;
+}
+.work h2{
+    grid-column-start: 2;
+}
+
+
+.work-container{
+    margin-top: 15vh;
+    grid-template-rows: auto;
+    row-gap: 30px;
+    grid-template-areas: 
+    ". title title title . . . . . ."
+    ". descripition descripition descripition descripition . date tags . view"
+    "nr img img img img img img img img img "
+}
+
+
+#work > div:nth-child(2){
+    margin-top: 5vh;
+}
+
+.work-image-container{
+    grid-area: img;
+    width: 100%;
+}
+
+.work-container img{
+    width: 100%;
+}
+
+.work-container .date{
+    grid-area: date;
+}
+.work-container .tags{
+    grid-area: tags;
+}
+.work-container .descripition{
+    grid-area: descripition;
+}
+.work-container a{
+    grid-area: view;
+    justify-self: end;
+}
+.work-container h5{
+    grid-area: nr;
+    align-self: center;
+    justify-self: center;
+    font-size: 32px;
+}
+.work-container h3{
+    grid-area: title;
+    opacity: 100%;
+    font-size: 32px;
+}
+
+.work-container button{
+    background-color: var(--fg);
+    color: var(--bg);
+    border: none;
+    padding: 2.5% 5% 2.5% 5%;
+    justify-self: end;
+}
+.work-container a{
+    color: var(--fg);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+
+
+
+#heroCanvasIndex{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    grid-column: span 10;
+    opacity: 50%;
+}
+
+.hero{
+    position: relative;
+    margin-top: 5vh;
+    grid-template-areas: 
+    "canvas canvas canvas canvas canvas canvas canvas canvas canvas canvas "
+    "first-name first-name first-name first-name port port last-name last-name last-name last-name"
+}
+
+#heroCanvasIndex #defaultCanvas0{
+    border-radius: 2vw;   
+}
+
+
+body > section.hero > p{
+    justify-self: center;
+    margin-top: 1.25vh;
+    grid-column: span 10;
+} 
+
+
+body > section.hero.grid > h1:nth-child(3), body > section.hero.grid > h1:nth-child(2){
+    
+    line-height: 150px;
+    margin-top: 30px;
+}
+
+body > section.hero.grid > h1:nth-child(2){
+    grid-area: first-name;
+}
+
+body > section.hero.grid > h1:nth-child(3){
+    grid-area: last-name;
+    justify-self: end;
+}
+
+body > section.hero.grid > div:nth-child(4){
+    grid-area: port;
+    text-align: center;
+    justify-self: center;
+    align-self: flex-end;
+}
+body > section.hero.grid > div:nth-child(4) > h2{
+    font-size: 40px;
+}
+
+#navPopUp{
+    display: none;
+}
+
+}

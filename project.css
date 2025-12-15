@@ -1,0 +1,321 @@
+.glightbox-container,
+.glightbox-container .ginner-container {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+}
+
+
+.glightbox-container .gslide-media {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+}
+
+
+.glightbox-container .plyr {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: auto !important;
+}
+
+
+.glightbox-container .plyr video {
+  width: 100% !important;
+  max-width: 100% !important;
+  
+  max-height: 100vh !important;
+  object-fit: contain !important;
+}
+
+
+
+/* -------------------------------------------------------------
+   GLOBAL BASICS
+------------------------------------------------------------- */
+
+img, video {
+    width: 100%;
+    height: auto;
+}
+
+.hero{
+    margin-top: 5vh;
+}
+
+.hero-code, .hero-img{
+    width: 100%;
+}
+
+.hero-img{
+    max-height: 80vh;
+    overflow: hidden;
+    border-radius: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-code{
+        height: 80vh;
+}
+
+.hero-code > canvas{
+    border-radius: 2vw;
+}
+
+.image-text-1,
+.image-text-2,
+.image-text-3,
+.final-posters,
+.grid-gallery, .img-full{
+    margin-top: 10vh;
+}
+
+.img-full div,
+.img-half div,
+.img-scroll div {
+    width: 100%;
+}
+
+.img-scroll img {
+    width: 100%;
+}
+
+.final-posters img {
+    width: 100%;
+}
+
+.hero h2,
+.final-posters h4 {
+    width: 100%;
+}
+
+
+
+/* -------------------------------------------------------------
+   MOBILE (default styles)
+   max-width: 600px
+------------------------------------------------------------- */
+
+
+
+.hero h2,.hero-code, .hero-img{
+    grid-column: span 6;
+}
+
+.project-info-grid {
+    margin-top: 5vh;
+    row-gap: 2vh;
+    grid-template-areas:
+        "description description description description description description"
+        "date date . course course .";
+}
+
+.project-descripition{ grid-area: description;}
+.project-date { grid-area: date; }
+.project-course { grid-area: course; }
+
+/* IMAGE–TEXT LAYOUTS (mobile) */
+
+.image-text-1 {
+    grid-template-areas:
+        "img img img img img img"
+        "text text text text text text";
+}
+
+.image-text-1 a { grid-area: img; }
+.image-text-1 div { grid-area: text; }
+
+.image-text-2 {
+    grid-template-areas:
+        "img img img img img img"
+        "text text text text text text";
+}
+
+.image-text-2 > div {
+    grid-area: img;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.image-text-2 :nth-child(2) {
+    grid-area: text;
+}
+
+.image-text-3 {
+    grid-template-areas:
+        "img img img img img img"
+        "text text text text text text";
+}
+
+.image-text-3 a { grid-area: img; }
+.image-text-3 div { grid-area: text; }
+
+
+.final-posters {
+    grid-template-rows: auto;
+    row-gap: var(--row-gap);
+}
+
+.final-posters h4{
+    grid-column: span 6;
+}
+
+.final-posters a {
+    grid-column: span 3;
+}
+
+.spacer {
+    display: none;
+}
+
+.img-half div, .img-half a  {
+        grid-column: span 3;
+    }
+
+.final-posters video{
+        display: none;
+    }
+
+
+/* -------------------------------------------------------------
+   TABLET
+   600px – 1400px
+------------------------------------------------------------- */
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+    
+    
+
+    .hero h2,.hero-code, .hero-img {
+        grid-column: span 8;
+    }
+
+    .project-info-grid {
+        margin-top: 10vh;
+        grid-template-areas:
+            "description description description description description description description description"
+            "date date . course course . . .";
+    }
+
+    /* Image–Text */
+    .image-text-1 {
+        grid-template-areas:
+            "img img img img img img img img"
+            "text text text text text text text text";
+    }
+
+    .image-text-2 > div {
+        grid-column: span 8;
+        height: 50vh;
+        overflow-y: scroll;
+    }
+
+    .image-text-3 {
+        grid-template-areas:
+            "img img img img img img img img"
+            "text text text text text text text text";
+    }
+
+    /* Posters */
+    .final-posters h4 { grid-column: span 8; }
+    .final-posters a { grid-column: span 4; }
+
+    .spacer {
+        display: none;
+    }
+
+    .img-scroll div { grid-column: span 8; }
+
+    .img-half div, .img-half a{
+        grid-column: span 4;
+    }
+
+    .final-posters video{
+        display: none;
+    }
+}
+
+
+/* -------------------------------------------------------------
+   DESKTOP
+   min-width: 1400px
+------------------------------------------------------------- */
+
+@media only screen and (min-width: 1200px) {
+     .hero h2,.hero-code, .hero-img {
+        grid-column: span 10;
+    }
+
+    /* Project info grid */
+    .project-info-grid {
+        grid-template-areas:
+            "description description description description description . date course . .";
+    }
+
+    /* Image–Text 1 */
+    .image-text-1 {
+        grid-template-areas:
+            "img img img img img img img . text text";
+    }
+
+    /* Image–Text 3 */
+    .image-text-3 {
+        grid-template-areas:
+            "text text . img img img img img img img";
+    }
+
+    /* Image–Text 2 */
+    .image-text-2 {
+        grid-template-areas:
+            "img img img img img img img . text text";
+    }
+
+    .image-text-2 > div {
+        grid-area: img;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    /* Posters */
+    .final-posters h4 { grid-column: span 10; }
+    .final-posters a { grid-column: span 2;}
+    .final-posters div { grid-column: span 2;}
+
+    .spacer {
+        grid-column: span 2;
+        display: block;
+    }
+
+
+    .img-full > div{
+        width: 100%;
+        grid-column: span 10;
+    }
+
+    .img-half div, .img-half a{
+        grid-column: span 5;
+    }
+
+    .grid-gallery {
+        margin-top: 20vh;
+    }
+
+    .img-scroll div {
+        grid-column: span 10;
+    }
+
+    .final-posters img{
+        display: none;
+    }
+    
+    .final-posters video{
+        display: block;
+    }
+
+
+}
