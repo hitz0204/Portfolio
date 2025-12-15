@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Pluvia; /* set name */
+  src: url(assets/pluvia/PluviaVF.woff); /* url of the font */
+  font-weight: 900;
+}
+
 .glightbox-container,
 .glightbox-container .ginner-container {
   width: 100vw !important;
@@ -35,6 +41,11 @@
 /* -------------------------------------------------------------
    GLOBAL BASICS
 ------------------------------------------------------------- */
+
+div.grid.pluvia-letters > p{
+    font-family: Pluvia;
+    justify-self: center;
+}
 
 img, video {
     width: 100%;
@@ -322,5 +333,17 @@ img, video {
         display: block;
     }
 
+    .pluvia-letters{
+        margin-top: 4vw;
+    }
+
+    div.grid.pluvia-letters > p{
+    font-size: 9vw;
+    grid-column: span 1;
+    line-height: 7vw;
+    }
+    
+
+    
 
 }
