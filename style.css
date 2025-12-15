@@ -169,6 +169,9 @@ footer {
     z-index: 10;
     width: 100vw;
   }
+  body .body-red{
+    background-color: #e40b0b;
+  }
 
 
   #navPopUp div{
