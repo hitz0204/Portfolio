@@ -9,6 +9,7 @@ links.forEach(link => {
     document.body.classList.remove("no-scroll");
     grid.classList.remove("grid-overlay-menu")
     hamburger.classList.remove("nav-white")
+    document.body.classList.remove("body-red");
   });
 });
 
@@ -17,6 +18,7 @@ links.forEach(link => {
 hamburger.onclick = function(){
     nav.classList.toggle("nav-active");
     document.body.classList.toggle("no-scroll");
+    document.body.classList.toggle("body-red");
     grid.classList.toggle("grid-overlay-menu")
     hamburger.classList.toggle("nav-white")
 };
