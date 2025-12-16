@@ -22,3 +22,42 @@ hamburger.onclick = function(){
     grid.classList.toggle("grid-overlay-menu")
     hamburger.classList.toggle("nav-white")
 };
+
+
+
+gsap.registerPlugin(ScrambleTextPlugin,  ScrollTrigger);
+
+const headline2 = document.querySelectorAll(".hero h2,.hero p");
+
+gsap.to(headline2, {
+  duration: 1, 
+  scrambleText: {
+    text: "{original}", 
+    chars: "!#$%(+,", 
+    revealDelay: 0.5, 
+    speed: 0.5, 
+  }
+});
+
+const headline3 = document.querySelectorAll("#about h2, #work h2");
+
+headline3.forEach(el => {
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el,          // das Element selbst als Trigger
+      start: "top 95%",     // wenn das Element 80% von oben sichtbar ist
+      toggleActions: "play none none none", // nur einmal abspielen
+    },
+    duration: 1,
+    scrambleText: {
+      text: "{original}",
+      chars: "!#$%(+,",
+      revealDelay: 0.2,
+      speed: 0.8,
+    }
+  });
+});
+
+
+
+

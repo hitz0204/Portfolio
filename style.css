@@ -17,19 +17,22 @@
   --tablet-column-gap: 2vw;
   --tablet-row-gap: 1.5vw;
 
-  /* --bg: #F7F5F0; */
-  --fg: #141414;
-  --bg: #f9ece5;
+  /* --bg: #F7F5F0;
+  --fg: #141414; */
+  
+  /* --bg: #f9ece5; */
   /* --bg: #faf6f0; */
-  /* --bg: #161616;
-  --bg: #060606; */
+  /* /* --bg: #161616; */
+  /* --bg: #1b1b1b;  */
   /* --fg: #f0ecec; */
-  /* --fg: #e40b0b; */
+
+  --bg: #F7F5F0;
+  --fg: #e40b0b;
 }
 
-.hero{
+/* .hero{
   color: #e40b0b;
-}
+} */
 
 html, body {
   margin: 0;
