@@ -60,22 +60,66 @@ headline3.forEach(el => {
 
 
 
+// const loader = document.querySelector(".loader");
+//   const percentText = loader.querySelector(".percent");
+
+//   // Damit der Scroll erst nach dem Laden geht
+//   document.body.classList.add("no-scroll");
+
+//   // Simulierte Prozentanzeige
+//   let percent = 0;
+//   const interval = setInterval(() => {
+//     percent++;
+//     percentText.textContent = percent;
+
+//     if (percent >= 100) {
+//       clearInterval(interval);
+//       loader.style.display = "none";
+//       document.body.classList.remove("no-scroll");
+//       grid.classList.remove("grid-load")
+//     }
+//   }, 30); // Geschwindigkeit: kleiner Wert = schnellerer Zähler
+
+
+
+
+
 const loader = document.querySelector(".loader");
-  const percentText = loader.querySelector(".percent");
+const percentText = loader.querySelector(".percent");
+document.body.classList.add("no-scroll");
 
-  // Damit der Scroll erst nach dem Laden geht
-  document.body.classList.add("no-scroll");
+// Alle Ressourcen auf der Seite tracken
+const images = Array.from(document.images);
+const videos = Array.from(document.querySelectorAll("video"));
+const resources = [...images, ...videos];
 
-  // Simulierte Prozentanzeige
-  let percent = 0;
-  const interval = setInterval(() => {
-    percent++;
-    percentText.textContent = percent;
+let loaded = 0;
 
-    if (percent >= 100) {
-      clearInterval(interval);
+// Funktion, die aufgerufen wird, wenn eine Ressource geladen ist
+function resourceLoaded() {
+  loaded++;
+  const percent = Math.floor((loaded / resources.length) * 100);
+  percentText.textContent = percent;
+
+  // Wenn alles geladen ist, Loader entfernen
+  if (loaded === resources.length) {
+    setTimeout(() => {
       loader.style.display = "none";
       document.body.classList.remove("no-scroll");
-      grid.classList.remove("grid-load")
-    }
-  }, 30); // Geschwindigkeit: kleiner Wert = schnellerer Zähler
+      if (grid) grid.classList.remove("grid-load");
+    }, 200); // kleine Pause für Smoothness
+  }
+}
+
+// Ressourcen überwachen
+resources.forEach(res => {
+  // Bei Bildern: "complete" prüft, ob sie schon geladen sind
+  // Bei Videos: "readyState >= 3" = Meta- und Daten geladen
+  if ((res.tagName === "IMG" && res.complete) || (res.tagName === "VIDEO" && res.readyState >= 3)) {
+    resourceLoaded();
+  } else {
+    res.addEventListener("load", resourceLoaded);
+    res.addEventListener("loadeddata", resourceLoaded);
+    res.addEventListener("error", resourceLoaded); // Fehler trotzdem mitzählen
+  }
+});
