@@ -120,6 +120,10 @@ img {
     margin-top: 15vh;
 }
 
+.work h2{
+    grid-column: span 6;
+}
+
 .work-container {
     margin-top: 3vh;
     display: grid;
