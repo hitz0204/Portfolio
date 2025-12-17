@@ -21,6 +21,7 @@ hamburger.onclick = function(){
     document.body.classList.toggle("body-red");
     grid.classList.toggle("grid-overlay-menu")
     hamburger.classList.toggle("nav-white")
+    hamburger.classList.toggle('open')
 };
 
 
@@ -123,3 +124,23 @@ resources.forEach(res => {
     res.addEventListener("error", resourceLoaded); // Fehler trotzdem mitzählen
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

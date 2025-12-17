@@ -75,11 +75,6 @@ a {
   text-decoration: none;
 }
 
-footer {
-  height: 20vh;
-}
-
-
 
 .grid {
   display: grid;
@@ -130,11 +125,10 @@ footer {
 }
 
 .nav-desktop { display: none; }
+
   .nav-mobile {
     position: fixed;
-    top: 1vh;
-    
-    /* left: 80.5vw; */
+    top: 1vh;    
     right: calc(var(--mobile-column-margin-right) + var(--mobile-column-gap));
     z-index: 50;
     mix-blend-mode: exclusion;
@@ -151,6 +145,7 @@ footer {
   width: 35px;
   background-color: white;
   display: block;
+  transition: all 0.3s ease; 
   }
 
   .nav-mobile span + span{
@@ -159,9 +154,30 @@ footer {
 
   .nav-inactive{
     display: none;
-  }
+  } 
 
+
+
+.nav-mobile.open span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px; /* Leichte Verschiebung nach unten */
+}
+
+.nav-mobile.open span:nth-child(2) {
+    opacity: 0; /* Der mittlere Strich verschwindet */
+}
+
+.nav-mobile.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -10px; /* Leichte Verschiebung nach oben */
+}
   
+
+
+  /******************************************************************************************/
+
   body > div.nav-inactive.nav-active{
     display: block;
     position: fixed;
@@ -226,6 +242,36 @@ footer {
     bottom: 10vh;
   }
 
+
+  footer{
+    margin-top: 5vh;
+    grid-template-areas:
+        " . heading heading heading heading heading"
+        " . mail mail mail mail mail"
+        " . insta insta insta insta insta"
+        " . ani ani ani ani ani"
+        ;
+  }
+  footer h2{
+    grid-area: heading;
+  }
+  footer .mail{
+    grid-area: mail;
+  }
+  footer .insta{
+    grid-area: insta;
+  }
+
+  .footer-animation{
+    grid-area: ani;
+    width: 100%;
+    height: auto;
+    max-height: 30vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 
@@ -373,5 +419,34 @@ footer {
   .hero .port{
     align-self: flex-end;
   }
+
+
+  footer{
+    margin-top: 25vh;
+    grid-template-areas:
+        " . heading heading heading heading heading heading heading heading heading"
+        " . mail mail mail mail insta ."
+        " . insta insta insta "
+        ;
+  }
+
+  .mail{
+    margin-top: 20vh;
+  }
+
+  .insta{
+    margin-bottom: 15vh;
+  }
+
+  .footer-animation{
+    grid-area: ani;
+    max-height: 50vh;
+    margin-bottom: 10vh;
+    opacity: 50%;
+  }
+  
+  
+
+  
 }
 
