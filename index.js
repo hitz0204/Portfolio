@@ -18,7 +18,7 @@ img.onload = () => {
     canvas.height = img.height * scale;
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
-
+/*
 // Funktion für Hover-Pixel
 function drawHover(mouseX, mouseY) {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -71,3 +71,4 @@ canvas.addEventListener('mousemove', (e) => {
 canvas.addEventListener('mouseleave', () => {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 });
+*/
