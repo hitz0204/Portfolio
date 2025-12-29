@@ -326,7 +326,8 @@ img, video {
     }
 
     .final-posters img{
-        display: none;
+        /* display: none; */
+        display: block;
     }
     
     .final-posters video{
