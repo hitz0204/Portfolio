@@ -249,6 +249,10 @@ img, video {
         grid-area: text;
     }
 
+    footer{
+        height: 2vh;
+    }
+
 /* -------------------------------------------------------------
    TABLET
    600px – 1400px
@@ -315,6 +319,10 @@ img, video {
         "color3 color3 color3 color3 color4 color4 color4 color4"
         "color5 color5 color5 color5 color6 color6 color6 color6"
         "text text text text text text text text";
+    }
+
+    footer{
+        height: 4vh;
     }
 }
 
@@ -424,6 +432,10 @@ img, video {
         text-align: center;
         padding: 2vh 0 2vh 0;
     }
-    
 
+    footer{
+        height: 4vh;
+    }
+    
+    
 }

@@ -131,7 +131,6 @@ a {
     top: 1vh;    
     right: calc(var(--mobile-column-margin-right) + var(--mobile-column-gap));
     z-index: 50;
-    mix-blend-mode: exclusion;
     width: auto;
     height: auto;
   }
@@ -143,7 +142,7 @@ a {
   .nav-mobile span {
   height: 4px;
   width: 35px;
-  background-color: white;
+  background-color: var(--fg);
   display: block;
   transition: all 0.3s ease; 
   }
@@ -243,36 +242,8 @@ a {
   }
 
 
-  footer{
-    margin-top: 5vh;
-    grid-template-areas:
-        " . heading heading heading heading heading"
-        " . mail mail mail mail mail"
-        " . insta insta insta insta insta"
-        " . ani ani ani ani ani"
-        ;
-  }
-  footer h2{
-    grid-area: heading;
-  }
-  footer .mail{
-    grid-area: mail;
-  }
-  footer .insta{
-    grid-area: insta;
-  }
-
-  .footer-animation{
-    grid-area: ani;
-    width: 100%;
-    height: auto;
-    max-height: 30vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+  
+  
 
 
 @media only screen and (max-width: 600px) {
@@ -311,6 +282,7 @@ a {
   }
 
 
+
 }
 
 
@@ -347,17 +319,16 @@ a {
     grid-column: span 10;
     position: fixed;
     z-index: 100;
-    mix-blend-mode: exclusion;
   }
 
   nav div a {
     margin-left: 2vw;
-    color: var(--bg);
   }
 
   .nav-mobile {
     right: calc(var(--tablet-column-margin-right) + var(--tablet-column-gap));
   }
+
 }
 
 
@@ -383,16 +354,6 @@ a {
     margin-right: calc(var(--column-margin-right) - var(--column-gap));
   }
 
-  /* nav div {
-    margin-top: 1vh;
-    justify-self: end;
-    grid-column: span 10;
-    position: fixed;
-    z-index: 100;
-    mix-blend-mode: exclusion;
-  } */
-
-
   .nav-desktop { display: grid;}
   .nav-mobile { display: none}
 
@@ -400,14 +361,12 @@ a {
     position: fixed;
     top: 1vh;
     z-index: 100;
-    mix-blend-mode: exclusion;
     grid-template-areas: 
     ". . . index about work contact . . ."
     ;
   }
 
   nav div a {
-    color: var(--bg);
     justify-self: center;
   }
   
@@ -420,33 +379,6 @@ a {
     align-self: flex-end;
   }
 
-
-  footer{
-    margin-top: 25vh;
-    grid-template-areas:
-        " . heading heading heading heading heading heading heading heading heading"
-        " . mail mail mail mail insta ."
-        " . insta insta insta "
-        ;
-  }
-
-  .mail{
-    margin-top: 20vh;
-  }
-
-  .insta{
-    margin-bottom: 15vh;
-  }
-
-  .footer-animation{
-    grid-area: ani;
-    max-height: 50vh;
-    margin-bottom: 10vh;
-    opacity: 50%;
-  }
-  
-  
-
-  
+ 
 }
 

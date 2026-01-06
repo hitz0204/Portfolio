@@ -81,7 +81,21 @@ img {
     height: 100%;
 }
 
+  footer h2{
+    grid-area: heading;
+  }
+  
+  .footer-links{
+    grid-area: links;
+  }
 
+  footer .name{
+    grid-area: name;
+  }
+
+  footer .mail{
+    grid-area: mail;
+  } 
 
 /* =========================================================
    ABOUT – MOBILE FIRST
@@ -186,6 +200,18 @@ img {
     display: none;
 }
 
+#footer{
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    row-gap: 5vh;
+    grid-template-areas:
+        " heading heading heading heading heading heading"
+        "name name mail mail . . "
+        "links links . . . . "
+        ;
+    }
+
+
 /* =========================================================
    TABLET ≥ 600px
 ========================================================= */
@@ -239,6 +265,19 @@ img {
             "view view view view view view view view"
             "nr nr nr nr nr nr nr nr";
     }
+
+
+
+    #footer{
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    row-gap: 12vh;
+    grid-template-areas:
+        " heading heading heading heading heading heading heading heading"
+        "name name mail mail . . links links "
+        ;
+    }
+
 }
 
 /* =========================================================
@@ -252,7 +291,7 @@ img {
     } */
 
     .hero h1{
-        font-size:  15vw;
+        font-size:  14vw;
         line-height: 13vh;
         margin-top: 30px;
     }
@@ -260,8 +299,8 @@ img {
     .about {
         margin-top: 25vh;
         grid-template-areas:
-            ". heading heading heading . img img img img ."
-            ". text text text . img img img img .";
+            ". heading heading heading . img img img . ."
+            ". text text text . img img img . .";
     }
     
     .about h2{
@@ -270,9 +309,13 @@ img {
 
     .about p {
         position: relative;
-        top: -20%;
-        margin-top: 0;
+        /* top: -20%;  */
+        /* top: -15vh;  */
+        /* margin-top: 0; */
+        margin-top: -10vh;
     }
+
+    
 
     .work {
         margin-top: 20vh;
@@ -280,6 +323,10 @@ img {
 
     .work h2{
         grid-column: 2 / span 8;
+    }
+
+    #work > div:nth-child(2){
+        margin-top: 10vh;
     }
 
     .work-container {
@@ -315,6 +362,20 @@ img {
     #navPopUp {
         display: none;
     }
+
+
+
+    #footer{
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    row-gap: 12vh;
+    grid-template-areas:
+        " . heading heading heading heading heading heading heading heading heading"
+        ". name . mail . . links . . ."
+        ;
+    }
+
+  
 }
 
 
@@ -332,6 +393,5 @@ img {
             "img img img img img img img img img img"
             "nr . . . . . . . . ."; */
     }
-
    
 }
