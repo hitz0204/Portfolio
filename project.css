@@ -45,6 +45,7 @@
 div.grid.pluvia-letters > p{
     font-family: Pluvia;
     justify-self: center;
+    grid-column: auto;
 }
 
 img, video {
@@ -110,8 +111,15 @@ img, video {
    MOBILE (default styles)
    max-width: 600px
 ------------------------------------------------------------- */
+    .pluvia-letters{
+        margin-top: 4vw;
+    }
 
-
+    div.grid.pluvia-letters > p{
+    font-size: 27vw;
+    grid-column: span 2;
+    line-height: 22vw;
+    }
 
 .hero h2,.hero-code, .hero-img{
     grid-column: span 6;
@@ -324,6 +332,14 @@ img, video {
     footer{
         height: 4vh;
     }
+
+
+  
+
+    div.grid.pluvia-letters > p{
+    font-size: 22vw;
+    line-height: 17vw;
+    }
 }
 
 
@@ -405,14 +421,15 @@ img, video {
         display: block;
     }
 
+   
+
     .pluvia-letters{
-        margin-top: 4vw;
+        margin-top: 10vw;
     }
 
     div.grid.pluvia-letters > p{
-    font-size: 9vw;
-    grid-column: span 1;
-    line-height: 7vw;
+    font-size: 20vw;
+    line-height: 15vw;
     }
     
     .styleguide{
