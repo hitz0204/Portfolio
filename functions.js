@@ -61,30 +61,6 @@ headline3.forEach(el => {
 
 
 
-// const loader = document.querySelector(".loader");
-//   const percentText = loader.querySelector(".percent");
-
-//   // Damit der Scroll erst nach dem Laden geht
-//   document.body.classList.add("no-scroll");
-
-//   // Simulierte Prozentanzeige
-//   let percent = 0;
-//   const interval = setInterval(() => {
-//     percent++;
-//     percentText.textContent = percent;
-
-//     if (percent >= 100) {
-//       clearInterval(interval);
-//       loader.style.display = "none";
-//       document.body.classList.remove("no-scroll");
-//       grid.classList.remove("grid-load")
-//     }
-//   }, 30); // Geschwindigkeit: kleiner Wert = schnellerer Zähler
-
-
-
-
-
 const loader = document.querySelector(".loader");
 const percentText = loader.querySelector(".percent");
 document.body.classList.add("no-scroll");
@@ -124,20 +100,6 @@ resources.forEach(res => {
     res.addEventListener("error", resourceLoaded); // Fehler trotzdem mitzählen
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
