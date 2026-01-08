@@ -126,6 +126,14 @@ img {
     overflow: hidden;
 }
 
+.about-text-desktop{
+    grid-area: desktop;
+}
+
+.about-text-desktop{
+    display: none;
+}
+
 /* =========================================================
    WORK – MOBILE FIRST
 ========================================================= */
@@ -299,7 +307,7 @@ img {
     .about {
         margin-top: 25vh;
         grid-template-areas:
-            ". heading heading heading . img img img . ."
+            ". desktop desktop desktop . img img img . ."
             ". text text text . img img img . .";
     }
     
@@ -315,7 +323,17 @@ img {
         margin-top: -10vh;
     }
 
+    .about-text-desktop{
+        display: block;
+    }
+
+    .about-text-desktop p{
+        margin-top: 5vh;
+    }
     
+    #about > p,#about > h2{
+        display: none;
+    }
 
     .work {
         margin-top: 20vh;

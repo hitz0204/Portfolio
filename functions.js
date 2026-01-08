@@ -2,14 +2,17 @@ let nav = document.getElementById("navPopUp")
 let hamburger = document.getElementById("hamburger")
 const links = navPopUp.querySelectorAll('a');
 const grid = document.querySelector(".grid-overlay")
+let spans = hamburger.querySelectorAll("span")
 
 links.forEach(link => {
   link.addEventListener('click', (event) => {
     navPopUp.classList.remove('nav-active');
     document.body.classList.remove("no-scroll");
     grid.classList.remove("grid-overlay-menu")
-    hamburger.classList.remove("nav-white")
     document.body.classList.remove("body-red");
+    spans.forEach(span => {
+    span.classList.remove('span-white');
+    });
   });
 });
 
@@ -20,8 +23,10 @@ hamburger.onclick = function(){
     document.body.classList.toggle("no-scroll");
     document.body.classList.toggle("body-red");
     grid.classList.toggle("grid-overlay-menu")
-    hamburger.classList.toggle("nav-white")
     hamburger.classList.toggle('open')
+    spans.forEach(span => {
+    span.classList.toggle('span-white');
+    });
 };
 
 
