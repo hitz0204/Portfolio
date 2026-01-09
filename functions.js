@@ -3,6 +3,7 @@ let hamburger = document.getElementById("hamburger")
 const links = navPopUp.querySelectorAll('a');
 const grid = document.querySelector(".grid-overlay")
 let spans = hamburger.querySelectorAll("span")
+const lightboxes = document.querySelectorAll(".glightbox")
 
 links.forEach(link => {
   link.addEventListener('click', (event) => {
@@ -108,6 +109,107 @@ resources.forEach(res => {
 
 
 
+
+
+
+// const cursor = document.querySelector(".custom-cursor");
+
+// cursor.style.width = "12px";
+// cursor.style.height = "12px";
+// cursor.style.background = "red";
+// cursor.style.position = "fixed";
+// cursor.style.top = "0";
+// cursor.style.pointerEvents = "none"; 
+
+// document.addEventListener("mousemove", (evt) => {
+//   gsap.set(cursor, {
+//     x: evt.clientX,
+//   y: evt.clientY,
+//   xPercent: -50,
+//   yPercent: -50
+//   });
+// });
+
+
+// document.querySelectorAll(".img-full").forEach(el => {
+//   el.dataset.cursorText = "Click";
+//   console.log("JA")
+// });
+
+document.querySelectorAll(".img-full").forEach(el => {
+  el.classList.add("cursor-hover");
+  el.dataset.cursorText ??= "Click";
+});
+
+const cursor = document.querySelector(".custom-cursor");
+const cursorText = cursor.querySelector(".cursor-text");
+
+cursor.style.width = "auto";
+cursor.style.height = "auto";
+cursor.style.minWidth = "12px";
+cursor.style.minHeight = "12px";
+cursor.style.background = "red";
+cursor.style.position = "fixed";
+cursor.style.pointerEvents = "none";
+cursor.style.display = "inline-flex";
+cursor.style.alignItems = "center";
+cursor.style.justifyContent = "center";
+cursor.style.whiteSpace = "nowrap";
+cursor.style.top = "0";
+
+
+
+
+// Maus-Tracking
+document.addEventListener("mousemove", (e) => {
+  gsap.to(cursor, {
+    x: e.clientX,
+    y: e.clientY,
+    xPercent: -50,
+    yPercent: -50,
+    duration: 0.15,
+    ease: "power2.out"
+  });
+});
+
+// Hover-Elemente
+document.querySelectorAll(".cursor-hover").forEach(el => {
+
+  el.addEventListener("mouseenter", () => {
+    cursorText.textContent = el.dataset.cursorText;
+
+    gsap.to(cursor, {
+      padding: "5px 9px",
+      borderRadius: "5px",
+      backgroundColor: "red",
+      duration: 0.25,
+      ease: "power2.out"
+    });
+
+    gsap.to(cursorText, {
+      opacity: 1,
+      duration: 0.15
+    });
+  });
+
+  el.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      padding: "4px",
+      borderRadius: "00",
+      backgroundColor: "red",
+      duration: 0.25,
+      ease: "power2.out"
+    });
+
+    gsap.to(cursorText, {
+      opacity: 0,
+      duration: 0.1
+    });
+
+    cursorText.textContent = "";
+  });
+
+});
 
 
 

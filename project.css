@@ -454,5 +454,10 @@ img, video {
         height: 4vh;
     }
     
+
+    .cursor-text{
+        color: var(--bg);
+    }
+
     
 }
