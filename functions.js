@@ -131,15 +131,6 @@ resources.forEach(res => {
 // });
 
 
-// document.querySelectorAll(".img-full").forEach(el => {
-//   el.dataset.cursorText = "Click";
-//   console.log("JA")
-// });
-
-document.querySelectorAll(".img-full").forEach(el => {
-  el.classList.add("cursor-hover");
-  el.dataset.cursorText ??= "Click";
-});
 
 const cursor = document.querySelector(".custom-cursor");
 const cursorText = cursor.querySelector(".cursor-text");
@@ -174,34 +165,44 @@ document.addEventListener("mousemove", (e) => {
 
 // Hover über .glightbox
 document.addEventListener("mouseover", (e) => {
-  const target = e.target.closest(".glightbox");
+  const target = e.target.closest(".glightbox, .nav-link, .gclose, .gnext, .gprev");
+  
   if (!target) return;
 
   // Text abhängig von Klasse
-  let text = "Click"; // Default
-  if (target.classList.contains("bachelor-poster")) text = "Play";
-  if (target.classList.contains("work-image-container")) text = "View";
+  let text = "FULLSCREEN"; // Default
+  if (target.classList.contains("bachelor-poster")) text = "PLAY";
+  if (target.classList.contains("work-image-container")) text = "VIEW";
+  if (target.classList.contains("index-link")) text = "INDEX";
+  if (target.classList.contains("about-link")) text = "ABOUT";
+  if (target.classList.contains("work-link")) text = "WORK";
+  if (target.classList.contains("contact-link")) text = "CONTACT";
+  if (target.classList.contains("gclose")) text = "CLOSE";
+  if (target.classList.contains("gnext")) text = "NEXT";
+  if (target.classList.contains("gclose")) text = "CLOSE";
+  if (target.classList.contains("gprev")) text = "PREVIOUS";
+  
 
   cursorText.textContent = text;
 
   // Animation des Cursors
   gsap.to(cursor, {
-    padding: "10px 18px",
-    borderRadius: "0",
-    duration: 0.25
+    padding: "5px 12px",
+    borderRadius: "4px",
+    duration: 0.05
   });
 
   gsap.to(cursorText, { opacity: 1, duration: 0.15 });
 });
 
 document.addEventListener("mouseout", (e) => {
-  const target = e.target.closest(".glightbox");
+  const target = e.target.closest(".glightbox, .nav-link, .gclose, .gnext, .gprev");
   if (!target) return;
 
   gsap.to(cursor, {
     padding: "4px",
-    borderRadius: "0%",
-    duration: 0.25
+    borderRadius: "3px",
+    duration: 0.2
   });
 
   gsap.to(cursorText, { opacity: 0, duration: 0.1 });
