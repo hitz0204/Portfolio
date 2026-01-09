@@ -146,8 +146,8 @@ const cursorText = cursor.querySelector(".cursor-text");
 
 cursor.style.width = "auto";
 cursor.style.height = "auto";
-cursor.style.minWidth = "12px";
-cursor.style.minHeight = "12px";
+cursor.style.minWidth = "14px";
+cursor.style.minHeight = "14px";
 cursor.style.background = "red";
 cursor.style.position = "fixed";
 cursor.style.pointerEvents = "none";
@@ -156,7 +156,7 @@ cursor.style.alignItems = "center";
 cursor.style.justifyContent = "center";
 cursor.style.whiteSpace = "nowrap";
 cursor.style.top = "0";
-
+cursor.style.zIndex = "9999999"
 
 
 
@@ -167,49 +167,43 @@ document.addEventListener("mousemove", (e) => {
     y: e.clientY,
     xPercent: -50,
     yPercent: -50,
-    duration: 0.15,
+    duration: 0.12,
     ease: "power2.out"
   });
 });
 
-// Hover-Elemente
-document.querySelectorAll(".cursor-hover").forEach(el => {
+// Hover über .glightbox
+document.addEventListener("mouseover", (e) => {
+  const target = e.target.closest(".glightbox");
+  if (!target) return;
 
-  el.addEventListener("mouseenter", () => {
-    cursorText.textContent = el.dataset.cursorText;
+  // Text abhängig von Klasse
+  let text = "Click"; // Default
+  if (target.classList.contains("bachelor-poster")) text = "Play";
+  if (target.classList.contains("work-image-container")) text = "View";
 
-    gsap.to(cursor, {
-      padding: "5px 9px",
-      borderRadius: "5px",
-      backgroundColor: "red",
-      duration: 0.25,
-      ease: "power2.out"
-    });
+  cursorText.textContent = text;
 
-    gsap.to(cursorText, {
-      opacity: 1,
-      duration: 0.15
-    });
+  // Animation des Cursors
+  gsap.to(cursor, {
+    padding: "10px 18px",
+    borderRadius: "0",
+    duration: 0.25
   });
 
-  el.addEventListener("mouseleave", () => {
-    gsap.to(cursor, {
-      padding: "4px",
-      borderRadius: "00",
-      backgroundColor: "red",
-      duration: 0.25,
-      ease: "power2.out"
-    });
-
-    gsap.to(cursorText, {
-      opacity: 0,
-      duration: 0.1
-    });
-
-    cursorText.textContent = "";
-  });
-
+  gsap.to(cursorText, { opacity: 1, duration: 0.15 });
 });
 
+document.addEventListener("mouseout", (e) => {
+  const target = e.target.closest(".glightbox");
+  if (!target) return;
 
+  gsap.to(cursor, {
+    padding: "4px",
+    borderRadius: "0%",
+    duration: 0.25
+  });
 
+  gsap.to(cursorText, { opacity: 0, duration: 0.1 });
+  cursorText.textContent = "";
+});
