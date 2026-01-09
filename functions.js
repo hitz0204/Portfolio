@@ -110,46 +110,33 @@ resources.forEach(res => {
 
 
 
-
-
-// const cursor = document.querySelector(".custom-cursor");
-
-// cursor.style.width = "12px";
-// cursor.style.height = "12px";
-// cursor.style.background = "red";
-// cursor.style.position = "fixed";
-// cursor.style.top = "0";
-// cursor.style.pointerEvents = "none"; 
-
-// document.addEventListener("mousemove", (evt) => {
-//   gsap.set(cursor, {
-//     x: evt.clientX,
-//   y: evt.clientY,
-//   xPercent: -50,
-//   yPercent: -50
-//   });
-// });
-
-
-
 const cursor = document.querySelector(".custom-cursor");
 const cursorText = cursor.querySelector(".cursor-text");
 
-cursor.style.width = "auto";
-cursor.style.height = "auto";
-cursor.style.minWidth = "14px";
-cursor.style.minHeight = "14px";
-cursor.style.background = "red";
-cursor.style.position = "fixed";
-cursor.style.pointerEvents = "none";
-cursor.style.display = "inline-flex";
-cursor.style.alignItems = "center";
-cursor.style.justifyContent = "center";
-cursor.style.whiteSpace = "nowrap";
-cursor.style.top = "0";
-cursor.style.zIndex = "9999999"
+function isNoTouchDevice() {
+  return !(
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
 
-
+// Beispiel: Code nur für Geräte ohne Touchscreen
+if (isNoTouchDevice()) {
+  // console.log("Kein Touchscreen");  
+  cursor.style.width = "auto";
+  cursor.style.height = "auto";
+  cursor.style.minWidth = "14px";
+  cursor.style.minHeight = "14px";
+  cursor.style.background = "red";
+  cursor.style.position = "fixed";
+  cursor.style.pointerEvents = "none";
+  cursor.style.display = "inline-flex";
+  cursor.style.alignItems = "center";
+  cursor.style.justifyContent = "center";
+  cursor.style.whiteSpace = "nowrap";
+  cursor.style.top = "0";
+  cursor.style.zIndex = "9999999"
 
 // Maus-Tracking
 document.addEventListener("mousemove", (e) => {
@@ -208,3 +195,14 @@ document.addEventListener("mouseout", (e) => {
   gsap.to(cursorText, { opacity: 0, duration: 0.1 });
   cursorText.textContent = "";
 });
+
+
+
+
+} else {
+  console.log("Touchscreen erkannt – der Code wird nicht ausgeführt.");
+}
+
+
+
+
