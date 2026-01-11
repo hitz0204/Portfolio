@@ -95,6 +95,10 @@ img {
     grid-area: mail;
   } 
 
+  footer .credits{
+    grid-area: credits;
+  }
+
 /* =========================================================
    ABOUT – MOBILE FIRST
 ========================================================= */
@@ -159,7 +163,7 @@ img {
 
 .work-container h3 {
     grid-area: title;
-    font-size: 32px;
+    font-size: 48px;
 }
 
 .work-image-container {
@@ -214,6 +218,7 @@ img {
         " heading heading heading heading heading heading"
         "name name mail mail . . "
         "links links . . . . "
+        "credits credits . . . . "
         ;
     }
 
@@ -281,6 +286,7 @@ img {
     grid-template-areas:
         " heading heading heading heading heading heading heading heading"
         "name name mail mail . . links links "
+        "credits credits . . . . . . "
         ;
     }
 
@@ -387,7 +393,8 @@ img {
     row-gap: 12vh;
     grid-template-areas:
         " . heading heading heading heading heading heading heading heading heading"
-        ". name . mail . . links . . ."
+        ". name mail mail . . links . . ."
+        ". credits credits . . . . . . ."
         ;
     }
 
