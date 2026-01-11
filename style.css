@@ -71,9 +71,7 @@ p, button, a, .custom-cursor span{
   font-size: 20px;
 }
 
-p{
-  text-wrap: balance;
-}
+
 
 a {
   color: var(--fg);
