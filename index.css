@@ -14,7 +14,7 @@ img {
 }
 
 /* =========================================================
-   HERO – MOBILE FIRST
+   HERO 
 ========================================================= */
 
 .hero {
@@ -31,7 +31,7 @@ img {
     grid-area: canvas;
     width: 100%;
     height: 75vh;
-    opacity: 0.5;
+    opacity: .5;
     position: relative;
 }
 
@@ -63,44 +63,44 @@ img {
     font-size: 40px;
 }
 
-.hero > p {
+.hero>p {
     justify-self: center;
     margin-top: 1.25vh;
 }
 
-#aboutImg{
+#aboutImg {
     max-height: 80vh;
     display: flex;
     align-items: center;
 }
 
-#aboutImg canvas{
+#aboutImg canvas {
     width: 100%;
     height: 100%;
 }
 
-  footer h2{
+footer h2 {
     grid-area: heading;
-  }
-  
-  .footer-links{
+}
+
+.footer-links {
     grid-area: links;
-  }
+}
 
-  footer .name{
+footer .name {
     grid-area: name;
-  }
+}
 
-  footer .mail{
+footer .mail {
     grid-area: mail;
-  } 
+}
 
-  footer .credits{
+footer .credits {
     grid-area: credits;
-  }
+}
 
 /* =========================================================
-   ABOUT – MOBILE FIRST
+   ABOUT 
 ========================================================= */
 
 .about {
@@ -128,23 +128,23 @@ img {
     overflow: hidden;
 }
 
-.about-text-desktop{
+.about-text-desktop {
     grid-area: desktop;
 }
 
-.about-text-desktop{
+.about-text-desktop {
     display: none;
 }
 
 /* =========================================================
-   WORK – MOBILE FIRST
+   WORK 
 ========================================================= */
 
 .work {
     margin-top: 15vh;
 }
 
-.work h2{
+.work h2 {
     grid-column: span 6;
 }
 
@@ -210,7 +210,7 @@ img {
     display: none;
 }
 
-#footer{
+#footer {
     margin-top: 15vh;
     margin-bottom: 10vh;
     row-gap: 5vh;
@@ -219,12 +219,12 @@ img {
         "name name mail mail . . "
         "links links . . . . "
         "credits credits . . . . "
-        ;
-    }
+    ;
+}
 
 
 /* =========================================================
-   TABLET ≥ 600px
+   TABLET 
 ========================================================= */
 
 @media (min-width: 600px) {
@@ -253,19 +253,16 @@ img {
 
     .about {
         grid-template-areas:
-            /* "heading heading heading . img img img img"
-            "text text text . img img img img"; */
+
             "heading heading heading heading heading heading heading heading"
             " . . img img img img . ."
             " . text text text text text text ."
-            /* "heading heading heading heading img img img img"
-            " text text text . img img img img" */
-            
-            ;
+
+        ;
     }
 
-    /* .about h2 {justify-self: start;} */
-    
+
+
 
     .work-container {
         grid-template-areas:
@@ -279,31 +276,28 @@ img {
 
 
 
-    #footer{
-    margin-top: 15vh;
-    margin-bottom: 10vh;
-    row-gap: 12vh;
-    grid-template-areas:
-        " heading heading heading heading heading heading heading heading"
-        "name name mail mail . . links links "
-        "credits credits . . . . . . "
+    #footer {
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+        row-gap: 12vh;
+        grid-template-areas:
+            " heading heading heading heading heading heading heading heading"
+            "name name mail mail . . links links "
+            "credits credits . . . . . . "
         ;
     }
 
 }
 
 /* =========================================================
-   DESKTOP ≥ 1400px
+   DESKTOP 
 ========================================================= */
 
 @media (min-width: 1200px) {
 
-    /* .view-project{
-        display: block;
-    } */
 
-    .hero h1{
-        font-size:  14vw;
+    .hero h1 {
+        font-size: 14vw;
         line-height: 13vh;
         margin-top: 30px;
     }
@@ -314,28 +308,26 @@ img {
             ". desktop desktop desktop . img img img . ."
             ". text text text . img img img . .";
     }
-    
-    .about h2{
+
+    .about h2 {
         justify-self: start;
     }
 
     .about p {
         position: relative;
-        /* top: -20%;  */
-        /* top: -15vh;  */
-        /* margin-top: 0; */
         margin-top: -10vh;
     }
 
-    .about-text-desktop{
+    .about-text-desktop {
         display: block;
     }
 
-    .about-text-desktop p{
+    .about-text-desktop p {
         margin-top: 5vh;
     }
-    
-    #about > p,#about > h2{
+
+    #about>p,
+    #about>h2 {
         display: none;
     }
 
@@ -343,24 +335,20 @@ img {
         margin-top: 20vh;
     }
 
-    .work h2{
+    .work h2 {
         grid-column: 2 / span 8;
     }
 
-    #work > div:nth-child(2){
+    #work>div:nth-child(2) {
         margin-top: 10vh;
     }
 
     .work-container {
         margin-top: 15vh;
         grid-template-areas:
-            ". title title title . . . . . ."
+            ". title title title title title title title title title"
             ". desc desc desc desc desc desc . date tags"
             "nr img img img img img img img img img";
-            /* "title title title title . . . . . ."
-            "desc desc desc desc desc . date tags . view"
-            "img img img img img img img img img img"
-            "nr . . . . . . . . ."; */
     }
 
     .work-container h5 {
@@ -387,39 +375,35 @@ img {
 
 
 
-    #footer{
-    margin-top: 15vh;
-    margin-bottom: 10vh;
-    row-gap: 12vh;
-    grid-template-areas:
-        " . heading heading heading heading heading heading heading heading heading"
-        ". name mail mail . . links . . ."
-        ". credits credits . . . . . . ."
+    #footer {
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+        row-gap: 12vh;
+        grid-template-areas:
+            " . heading heading heading heading heading heading heading heading heading"
+            ". name mail mail . . links . . ."
+            ". credits credits . . . . . . ."
         ;
     }
-
-  
 
 }
 
 
 @media (min-width: 1400px) {
 
-    
+
     .work-container {
         margin-top: 15vh;
         grid-template-areas:
-            ". title title title . . . . . ."
+            ". title title title title title title title title title"
             ". desc desc desc desc desc . date tags . "
             "nr img img img img img img img img img";
-            /* "title title title title . . . . . ."
+        /* "title title title title . . . . . ."
             "desc desc desc desc desc . date tags . view"
             "img img img img img img img img img img"
             "nr . . . . . . . . ."; */
     }
 
- 
-   
+
+
 }
-
-

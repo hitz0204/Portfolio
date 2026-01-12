@@ -1,82 +1,75 @@
 @font-face {
-  font-family: Pluvia; /* set name */
-  src: url(assets/pluvia/PluviaVF.woff); /* url of the font */
-  font-weight: 900;
+    font-family: Pluvia;
+    src: url(assets/pluvia/PluviaVF.woff);
+    font-weight: 900;
 }
 
-/*---------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------  
----------------------------------------------------------------------------------------------------------*/  
-body #glightbox-body{
-  z-index: 999!important
+body #glightbox-body {
+    z-index: 999 !important
 }
 
-body .gclose, body .gnext, body .gprev, body .gslide-image img.zoomable{
-  cursor: none;
+body .gclose,
+body .gnext,
+body .gprev,
+body .gslide-image img.zoomable {
+    cursor: none;
 }
-
 
 .glightbox-container,
 .glightbox-container .ginner-container {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  padding: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
 }
-
 
 .glightbox-container .gslide-media {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
 }
-
 
 .glightbox-container .plyr {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  height: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
 }
-
 
 .glightbox-container .plyr video {
-  width: 100% !important;
-  max-width: 100% !important;
-  
-  max-height: 100vh !important;
-  object-fit: contain !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    max-height: 100vh !important;
+    object-fit: contain !important;
 }
 
-/*---------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------  
----------------------------------------------------------------------------------------------------------*/  
-
-
 /* -------------------------------------------------------------
-   GLOBAL BASICS
+   GLOBAL 
 ------------------------------------------------------------- */
 
-div.grid.pluvia-letters > p{
+div.grid.pluvia-letters>p {
     font-family: Pluvia;
     justify-self: center;
     grid-column: auto;
 }
 
-img, video {
+img,
+video {
     width: 100%;
     height: auto;
 }
 
-.hero{
+.hero {
     margin-top: 5vh;
 }
 
-.hero-code, .hero-img{
+.hero-code,
+.hero-img {
     width: 100%;
 }
 
-.hero-img{
+.hero-img {
     max-height: 80vh;
     overflow: hidden;
     border-radius: 2vw;
@@ -85,11 +78,11 @@ img, video {
     align-items: center;
 }
 
-.hero-code{
-        height: 80vh;
+.hero-code {
+    height: 80vh;
 }
 
-.hero-code > canvas{
+.hero-code>canvas {
     border-radius: 2vw;
 }
 
@@ -97,7 +90,8 @@ img, video {
 .image-text-2,
 .image-text-3,
 .final-posters,
-.grid-gallery, .img-full{
+.grid-gallery,
+.img-full {
     margin-top: 10vh;
 }
 
@@ -120,23 +114,22 @@ img, video {
     width: 100%;
 }
 
-
-
 /* -------------------------------------------------------------
-   MOBILE (default styles)
-   max-width: 600px
+   MOBILE 
 ------------------------------------------------------------- */
-    .pluvia-letters{
-        margin-top: 4vw;
-    }
+.pluvia-letters {
+    margin-top: 4vw;
+}
 
-    div.grid.pluvia-letters > p{
+div.grid.pluvia-letters>p {
     font-size: 27vw;
     grid-column: span 2;
     line-height: 22vw;
-    }
+}
 
-.hero h2,.hero-code, .hero-img{
+.hero h2,
+.hero-code,
+.hero-img {
     grid-column: span 6;
 }
 
@@ -148,11 +141,17 @@ img, video {
         "date date . course course .";
 }
 
-.project-descripition{ grid-area: description;}
-.project-date { grid-area: date; }
-.project-course { grid-area: course; }
+.project-descripition {
+    grid-area: description;
+}
 
-/* IMAGE–TEXT LAYOUTS (mobile) */
+.project-date {
+    grid-area: date;
+}
+
+.project-course {
+    grid-area: course;
+}
 
 .image-text-1 {
     grid-template-areas:
@@ -160,8 +159,13 @@ img, video {
         "text text text text text text";
 }
 
-.image-text-1 a { grid-area: img; }
-.image-text-1 div { grid-area: text; }
+.image-text-1 a {
+    grid-area: img;
+}
+
+.image-text-1 div {
+    grid-area: text;
+}
 
 .image-text-2 {
     grid-template-areas:
@@ -169,7 +173,7 @@ img, video {
         "text text text text text text";
 }
 
-.image-text-2 > div {
+.image-text-2>div {
     grid-area: img;
     height: auto;
     max-height: 80vh;
@@ -186,16 +190,20 @@ img, video {
         "text text text text text text";
 }
 
-.image-text-3 a { grid-area: img; }
-.image-text-3 div { grid-area: text; }
+.image-text-3 a {
+    grid-area: img;
+}
 
+.image-text-3 div {
+    grid-area: text;
+}
 
 .final-posters {
     grid-template-rows: auto;
     row-gap: var(--row-gap);
 }
 
-.final-posters h4{
+.final-posters h4 {
     grid-column: span 6;
 }
 
@@ -207,85 +215,89 @@ img, video {
     display: none;
 }
 
-.img-half div, .img-half a  {
-        grid-column: span 3;
-    }
+.img-half div,
+.img-half a {
+    grid-column: span 3;
+}
 
-.img-full div{grid-column: span 6;}
+.img-full div {
+    grid-column: span 6;
+}
 
-.final-posters video{
-        display: none;
-    }
+.final-posters video {
+    display: none;
+}
 
-
-    
-    .styleguide{
-        grid-template-areas:
+.styleguide {
+    grid-template-areas:
         "color1 color1 color2 color2 color3 color3"
         "color4 color4 color5 color5 color6 color6"
         "text text text text text text";
-    }
-    
+}
 
-    .color1{    
-        background-color: #fff;
-        color: #000;
-        grid-area: color1;
-    }
-    .color2{    
-        background-color: #000;
-        color: var(--bg);
-        grid-area: color2;
-    }
-    .color3{    
-        background-color: #ff0000;
-        color: var(--bg);
-        grid-area: color3;
-    }
-    .color4{    
-        background-color: #B2B2B2;
-        color: var(--bg);
-        grid-area: color4;
-    }
-    .color5{    
-        background-color:  #ff0000;
-        color: var(--bg);
-        grid-area: color5;
-    }
-    .color6{    
-        background-color: #B60000;
-        color: var(--bg);
-        grid-area: color6;
-    }
+.color1 {
+    background-color: #fff;
+    color: #000;
+    grid-area: color1;
+}
 
-    .colors{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        text-align: center;
-        padding: 2vh 0 2vh 0;
-    }
+.color2 {
+    background-color: #000;
+    color: var(--bg);
+    grid-area: color2;
+}
 
-    .styleguide-text {
-        grid-area: text;
-    }
+.color3 {
+    background-color: #ff0000;
+    color: var(--bg);
+    grid-area: color3;
+}
 
-    footer{
-        height: 2vh;
-    }
+.color4 {
+    background-color: #B2B2B2;
+    color: var(--bg);
+    grid-area: color4;
+}
+
+.color5 {
+    background-color: #ff0000;
+    color: var(--bg);
+    grid-area: color5;
+}
+
+.color6 {
+    background-color: #B60000;
+    color: var(--bg);
+    grid-area: color6;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 2vh 0 2vh 0;
+}
+
+.styleguide-text {
+    grid-area: text;
+}
+
+footer {
+    height: 2vh;
+}
 
 /* -------------------------------------------------------------
    TABLET
-   600px – 1400px
 ------------------------------------------------------------- */
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
-    
-    
 
-    .hero h2,.hero-code, .hero-img {
+    .hero h2,
+    .hero-code,
+    .hero-img {
         grid-column: span 8;
     }
 
@@ -296,14 +308,13 @@ img, video {
             "date date . course course . . .";
     }
 
-    /* Image–Text */
     .image-text-1 {
         grid-template-areas:
             "img img img img img img img img"
             "text text text text text text text text";
     }
 
-    .image-text-2 > div {
+    .image-text-2>div {
         grid-column: span 8;
         height: 50vh;
         overflow-y: scroll;
@@ -315,93 +326,105 @@ img, video {
             "text text text text text text text text";
     }
 
-    /* Posters */
-    .final-posters h4 { grid-column: span 8; }
-    .final-posters a { grid-column: span 4; }
+    .final-posters h4 {
+        grid-column: span 8;
+    }
+
+    .final-posters a {
+        grid-column: span 4;
+    }
 
     .spacer {
         display: none;
     }
 
-    .img-scroll div { grid-column: span 8; }
+    .img-scroll div {
+        grid-column: span 8;
+    }
 
-    .img-full div{grid-column: span 8;}
+    .img-full div {
+        grid-column: span 8;
+    }
 
-    .img-half div, .img-half a{
+    .img-half div,
+    .img-half a {
         grid-column: span 4;
     }
 
-    .final-posters video{
+    .final-posters video {
         display: none;
     }
 
-
-    .styleguide{
+    .styleguide {
         grid-template-areas:
-        "color1 color1 color1 color1 color2 color2 color2 color2"
-        "color3 color3 color3 color3 color4 color4 color4 color4"
-        "color5 color5 color5 color5 color6 color6 color6 color6"
-        "text text text text text text text text";
+            "color1 color1 color1 color1 color2 color2 color2 color2"
+            "color3 color3 color3 color3 color4 color4 color4 color4"
+            "color5 color5 color5 color5 color6 color6 color6 color6"
+            "text text text text text text text text";
     }
 
-    footer{
+    footer {
         height: 4vh;
     }
 
-
-  
-
-    div.grid.pluvia-letters > p{
-    font-size: 22vw;
-    line-height: 17vw;
+    div.grid.pluvia-letters>p {
+        font-size: 22vw;
+        line-height: 17vw;
     }
 }
 
 
 /* -------------------------------------------------------------
    DESKTOP
-   min-width: 1400px
 ------------------------------------------------------------- */
 
 @media only screen and (min-width: 1200px) {
-     .hero h2,.hero-code, .hero-img {
+
+    .hero h2,
+    .hero-code,
+    .hero-img {
         grid-column: span 10;
     }
 
-    /* Project info grid */
+
     .project-info-grid {
         grid-template-areas:
             "description description description description description . date course . .";
     }
 
-    /* Image–Text 1 */
     .image-text-1 {
         grid-template-areas:
             "img img img img img img img . text text";
     }
 
-    /* Image–Text 3 */
     .image-text-3 {
         grid-template-areas:
             "text text . img img img img img img img";
     }
 
-    /* Image–Text 2 */
     .image-text-2 {
         grid-template-areas:
             "img img img img img img img . text text";
     }
 
-    .image-text-2 > div {
+    .image-text-2>div {
         grid-area: img;
         height: 80vh;
         overflow: hidden;
     }
 
-    /* Posters */
-    .final-posters h4 { grid-column: span 10; }
-    .final-posters a { grid-column: span 2;}
-    .final-posters div { grid-column: span 2;}
+
+    .final-posters h4 {
+        grid-column: span 10;
+    }
+
+    .final-posters a {
+        grid-column: span 2;
+    }
+
+    .final-posters div {
+        grid-column: span 2;
+    }
 
     .spacer {
         grid-column: span 2;
@@ -409,12 +432,13 @@ img, video {
     }
 
 
-    .img-full > div{
+    .img-full>div {
         width: 100%;
         grid-column: span 10;
     }
 
-    .img-half div, .img-half a{
+    .img-half div,
+    .img-half a {
         grid-column: span 5;
     }
 
@@ -427,35 +451,32 @@ img, video {
         grid-column: span 10;
     }
 
-    .final-posters img{
-        /* display: none; */
-        display: block;
-    }
-    
-    .final-posters video{
+    .final-posters img {
         display: block;
     }
 
-   
+    .final-posters video {
+        display: block;
+    }
 
-    .pluvia-letters{
+    .pluvia-letters {
         margin-top: 10vw;
     }
 
-    div.grid.pluvia-letters > p{
-    font-size: 20vw;
-    line-height: 15vw;
+    div.grid.pluvia-letters>p {
+        font-size: 20vw;
+        line-height: 15vw;
     }
-    
-    .styleguide{
+
+    .styleguide {
         grid-template-areas:
-        "text text text .color1 color1 color1 color2 color2 color2"
-        "text text text .color3 color3 color3 color4 color4 color4"
-        "text text text .color5 color5 color5 color6 color6 color6"        
+            "text text text .color1 color1 color1 color2 color2 color2"
+            "text text text .color3 color3 color3 color4 color4 color4"
+            "text text text .color5 color5 color5 color6 color6 color6"
         ;
     }
 
-    .colors{
+    .colors {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -465,12 +486,8 @@ img, video {
         padding: 2vh 0 2vh 0;
     }
 
-    footer{
+    footer {
         height: 4vh;
     }
-    
 
-    
-
-    
 }

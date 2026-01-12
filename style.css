@@ -17,23 +17,12 @@
   --tablet-column-gap: 2vw;
   --tablet-row-gap: 1.5vw;
 
-  /* --bg: #F7F5F0;
-  --fg: #141414; */
-  
-  /* --bg: #f9ece5; */
-  /* --bg: #faf6f0; */
-  /* /* --bg: #161616; */
-  /* --bg: #1b1b1b;  */
-  /* --fg: #f0ecec; */
-
   --bg: #F7F5F0;
   --fg: #e40b0b;
 }
 *{
 cursor: none
 }
-
-
 
 html, body {
   margin: 0;
@@ -45,10 +34,6 @@ body {
   background-color: var(--bg);
   color: var(--fg);
 }
-
-/* h1, .hero h2, .hero p{
-  color: #F50404;
-} */
 
 canvas {
   display: block;
@@ -71,13 +56,10 @@ p, button, a, .custom-cursor span{
   font-size: 20px;
 }
 
-
-
 a {
   color: var(--fg);
   text-decoration: none;
 }
-
 
 .cursor-text{
         color: var(--bg);
@@ -164,7 +146,7 @@ a {
 .nav-mobile.open span:nth-child(1) {
     transform: rotate(45deg);
     position: relative;
-    top: 9px; /* Leichte Verschiebung nach unten */
+    top: 9px; 
 }
 
 .nav-mobile.open span:nth-child(2) {
@@ -174,13 +156,9 @@ a {
 .nav-mobile.open span:nth-child(3) {
     transform: rotate(-45deg);
     position: relative;
-    top: -9px; /* Leichte Verschiebung nach oben */
+    top: -9px; 
     margin-right: 15px
 }
-  
-
-
-  /******************************************************************************************/
 
   body > div.nav-inactive.nav-active{
     display: block;
@@ -210,7 +188,6 @@ a {
     
   }
 
-  
   #navPopUp div a+a{
     margin-top: 5vh;
   }
@@ -222,7 +199,6 @@ a {
   #navPopUp > div > a{
     z-index: 15;
   }
-
 
   .loader{
   position: fixed;
@@ -270,16 +246,13 @@ a {
     margin-right: calc(var(--mobile-column-margin-right) - var(--mobile-column-gap));
   }
 
-  /* hide excessive columns */
   .grid-overlay :nth-child(7), 
   .grid-overlay :nth-child(8), 
   .grid-overlay :nth-child(9), 
   .grid-overlay :nth-child(10) {
     display: none;
   }
-
 }
-
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
 
@@ -325,7 +298,6 @@ a {
 @media only screen and (min-width: 1200px) {
 
   h1 { font-size: clamp(125px, 16vmax, 255px); }
-  /* h2 { font-size: 96px; } */
   h2 { font-size: clamp(72px, 7vmax, 96px); }
   h3, h4, h5, h6 { font-size: 24px; }
 
@@ -368,7 +340,5 @@ a {
   .hero .port{
     align-self: flex-end;
   }
-
- 
 }
 
