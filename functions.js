@@ -95,9 +95,13 @@ resources.forEach((res) => {
   } else {
     res.addEventListener("load", resourceLoaded);
     res.addEventListener("loadeddata", resourceLoaded);
-    res.addEventListener("error", resourceLoaded); // Fehler trotzdem mitzählen
+    res.addEventListener("error", resourceLoaded); 
   }
 });
+
+
+
+
 
 const cursor = document.querySelector(".custom-cursor");
 const cursorText = cursor.querySelector(".cursor-text");
@@ -110,22 +114,24 @@ function isNoTouchDevice() {
   );
 }
 
-
 if (isNoTouchDevice()) {
-  // console.log("Kein Touchscreen");
-  cursor.style.width = "auto";
-  cursor.style.height = "auto";
-  cursor.style.minWidth = "14px";
-  cursor.style.minHeight = "14px";
-  cursor.style.background = "red";
-  cursor.style.position = "fixed";
-  cursor.style.pointerEvents = "none";
-  cursor.style.display = "inline-flex";
-  cursor.style.alignItems = "center";
-  cursor.style.justifyContent = "center";
-  cursor.style.whiteSpace = "nowrap";
-  cursor.style.top = "0";
-  cursor.style.zIndex = "9999999";
+  Object.assign(cursor.style, {
+    width: "auto",
+    height: "auto",
+    minWidth: "14px",
+    minHeight: "14px",
+    background: "red",
+    position: "fixed",
+    pointerEvents: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    whiteSpace: "nowrap",
+    top: "0",
+    zIndex: "9999999",
+    borderRadius: "4px",
+    padding: "4px",
+  });
 
   document.addEventListener("mousemove", (e) => {
     gsap.to(cursor, {
@@ -135,55 +141,72 @@ if (isNoTouchDevice()) {
       yPercent: -50,
       duration: 0.12,
       ease: "power2.out",
+      overwrite: "auto",
     });
   });
 
-  document.addEventListener("mouseover", (e) => {
-    const target = e.target.closest(
-      ".glightbox, .nav-link, .gclose, .gnext, .gprev"
-    );
+  document.addEventListener(
+    "mouseenter",
+    (e) => {
+      const target = e.target.closest(
+        ".glightbox, .nav-link, .gclose, .gnext, .gprev"
+      );
+      if (!target) return;
 
-    if (!target) return;
+      let text = "FULLSCREEN";
+      if (target.classList.contains("bachelor-poster")) text = "PLAY";
+      if (target.classList.contains("work-image-container")) text = "VIEW";
+      if (target.classList.contains("index-link")) text = "INDEX";
+      if (target.classList.contains("about-link")) text = "ABOUT";
+      if (target.classList.contains("work-link")) text = "WORK";
+      if (target.classList.contains("contact-link")) text = "CONTACT";
+      if (target.classList.contains("gclose")) text = "CLOSE";
+      if (target.classList.contains("gnext")) text = "NEXT";
+      if (target.classList.contains("gprev")) text = "PREVIOUS";
 
-    // Default
-    let text = "FULLSCREEN";
-    if (target.classList.contains("bachelor-poster")) text = "PLAY";
-    if (target.classList.contains("work-image-container")) text = "VIEW";
-    if (target.classList.contains("index-link")) text = "INDEX";
-    if (target.classList.contains("about-link")) text = "ABOUT";
-    if (target.classList.contains("work-link")) text = "WORK";
-    if (target.classList.contains("contact-link")) text = "CONTACT";
-    if (target.classList.contains("gclose")) text = "CLOSE";
-    if (target.classList.contains("gnext")) text = "NEXT";
-    if (target.classList.contains("gclose")) text = "CLOSE";
-    if (target.classList.contains("gprev")) text = "PREVIOUS";
+      cursorText.textContent = text;
 
-    cursorText.textContent = text;
+      gsap.to(cursor, {
+        padding: "5px 14px",
+        borderRadius: "4px",
+        duration: 0.1,
+        overwrite: "auto",
+      });
 
-    gsap.to(cursor, {
-      padding: "5px 12px",
-      borderRadius: "4px",
-      duration: 0.05,
-    });
+      gsap.to(cursorText, {
+        opacity: 1,
+        duration: 0.15,
+        overwrite: "auto",
+      });
+    },
+    true
+  );
 
-    gsap.to(cursorText, { opacity: 1, duration: 0.15 });
-  });
+  document.addEventListener(
+    "mouseleave",
+    (e) => {
+      const target = e.target.closest(
+        ".glightbox, .nav-link, .gclose, .gnext, .gprev"
+      );
+      if (!target) return;
 
-  document.addEventListener("mouseout", (e) => {
-    const target = e.target.closest(
-      ".glightbox, .nav-link, .gclose, .gnext, .gprev"
-    );
-    if (!target) return;
+      gsap.to(cursor, {
+        padding: "4px",
+        borderRadius: "3px",
+        duration: 0.15,
+        overwrite: "auto",
+      });
 
-    gsap.to(cursor, {
-      padding: "4px",
-      borderRadius: "3px",
-      duration: 0.2,
-    });
+      gsap.to(cursorText, {
+        opacity: 0,
+        duration: 0.1,
+        overwrite: "auto",
+      });
 
-    gsap.to(cursorText, { opacity: 0, duration: 0.1 });
-    cursorText.textContent = "";
-  });
+      cursorText.textContent = "";
+    },
+    true
+  );
 } else {
   console.log("Touchscreen erkannt – der Code wird nicht ausgeführt.");
 }

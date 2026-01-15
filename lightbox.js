@@ -10,6 +10,7 @@ const lightbox = GLightbox({
     config: {
       ratio: '16:9',
       muted: true,
+      loop: { active: true },
       hideControls: true,
       controls: [], 
     }
