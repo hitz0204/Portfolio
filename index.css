@@ -163,7 +163,7 @@ footer .credits {
 
 .work-container h3 {
     grid-area: title;
-    font-size: 48px;
+    font-size: 32px;
 }
 
 .work-image-container {
@@ -218,7 +218,7 @@ footer .credits {
         " heading heading heading heading heading heading"
         "name name mail mail . . "
         "links links . . . . "
-        "credits credits . . . . "
+        "credits credits credits credits . . "
     ;
 }
 
