@@ -34,7 +34,6 @@ function windowResized() {
   xAmount = width / w;
   yAmount = height / h;
 
-  console.log(xAmount)
 }
 
 function draw() {

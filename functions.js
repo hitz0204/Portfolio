@@ -32,14 +32,21 @@ gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger);
 
 const headline2 = document.querySelectorAll(".port h2,.port p");
 
-gsap.to(headline2, {
-  duration: 1,
-  scrambleText: {
-    text: "{original}",
-    chars: "!#$%(+,",
-    revealDelay: 0.5,
-    speed: 0.5,
-  },
+headline2.forEach((el) => {
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el, 
+      start: "top 95%", 
+      toggleActions: "play none none none", 
+    },
+    duration: 1,
+    scrambleText: {
+      text: "{original}",
+      chars: "!#$%(+,",
+      revealDelay: 0.2,
+      speed: 0.8,
+    },
+  });
 });
 
 const headline3 = document.querySelectorAll("#about h2, #work h2");
@@ -70,7 +77,7 @@ function initHeadlineAnimations() {
       scrollTrigger: {
         trigger: el,
         start: "top 95%",
-        toggleActions: "play none none none",
+        toggleActions: "play none play none",
       },
       duration: 1,
       scrambleText: {
@@ -173,66 +180,122 @@ if (isNoTouchDevice()) {
     });
   });
 
-  document.addEventListener(
-    "mouseenter",
-    (e) => {
-      const target = e.target.closest(
-        ".glightbox, .nav-link, .gclose, .gnext, .gprev"
-      );
-      if (!target) return;
+//   document.addEventListener(
+//     "mouseenter",
+//     (e) => {
+//       const target = e.target.closest(
+//         ".glightbox, .nav-link, .gclose, .gnext, .gprev"
+//       );
+//       if (!target) return;
 
-      let text = "FULLSCREEN";
-      if (target.classList.contains("bachelor-poster")) text = "PLAY";
-      if (target.classList.contains("work-image-container")) text = "VIEW";
-      if (target.classList.contains("index-link")) text = "INDEX";
-      if (target.classList.contains("about-link")) text = "ABOUT";
-      if (target.classList.contains("work-link")) text = "WORK";
-      if (target.classList.contains("contact-link")) text = "CONTACT";
-      if (target.classList.contains("gclose")) text = "CLOSE";
-      if (target.classList.contains("gnext")) text = "NEXT";
-      if (target.classList.contains("gprev")) text = "PREVIOUS";
+//       let text = "FULLSCREEN";
+//       if (target.classList.contains("bachelor-poster")) text = "PLAY";
+//       if (target.classList.contains("work-image-container")) text = "VIEW";
+//       if (target.classList.contains("index-link")) text = "INDEX";
+//       if (target.classList.contains("about-link")) text = "ABOUT";
+//       if (target.classList.contains("work-link")) text = "WORK";
+//       if (target.classList.contains("contact-link")) text = "CONTACT";
+//       if (target.classList.contains("gclose")) text = "CLOSE";
+//       if (target.classList.contains("gnext")) text = "NEXT";
+//       if (target.classList.contains("gprev")) text = "PREVIOUS";
 
-      cursorText.textContent = text;
+//       cursorText.textContent = text;
 
-      gsap.to(cursor, {
-        padding: "5px 14px",
-        borderRadius: "4px",
-        duration: 0.1,
-        overwrite: "auto",
-      });
+//       gsap.to(cursor, {
+//         padding: "5px 14px",
+//         borderRadius: "4px",
+//         duration: 0.1,
+//         overwrite: "auto",
+//       });
 
-      gsap.to(cursorText, {
-        opacity: 1,
-        duration: 0.15,
-        overwrite: "auto",
-      });
-    },
-    true
-  );
+//       gsap.to(cursorText, {
+//         opacity: 1,
+//         duration: 0.15,
+//         overwrite: "auto",
+//       });
+//     },
+//     true
+//   );
 
-  document.addEventListener(
-    "mouseleave",
-    (e) => {
-      const target = e.target.closest(
-        ".glightbox, .nav-link, .gclose, .gnext, .gprev"
-      );
-      if (!target) return;
+//   document.addEventListener(
+//     "mouseleave",
+//     (e) => {
+//       const target = e.target.closest(
+//         ".glightbox, .nav-link, .gclose, .gnext, .gprev"
+//       );
+//       if (!target) return;
 
-      gsap.to(cursor, {
-        padding: "4px",
-        borderRadius: "3px",
-        duration: 0.15,
-        overwrite: "auto",
-      });
+//       gsap.to(cursor, {
+//         padding: "4px",
+//         borderRadius: "3px",
+//         duration: 0.15,
+//         overwrite: "auto",
+//       });
 
-      gsap.to(cursorText, {
-        opacity: 0,
-        duration: 0.1,
-        overwrite: "auto",
-      });
+//       gsap.to(cursorText, {
+//         opacity: 0,
+//         duration: 0.1,
+//         overwrite: "auto",
+//       });
 
-      cursorText.textContent = "";
-    },
-    true
-  );
+//       cursorText.textContent = "";
+//     },
+//     true
+//   );
+// }
+
+document.addEventListener("mouseenter", (e) => {
+  if (e.target.nodeType !== 1) return; 
+  const target = e.target.closest(".glightbox, .nav-link, .gclose, .gnext, .gprev");
+  if (!target) return;
+
+  let text = "FULLSCREEN";
+  if (target.classList.contains("bachelor-poster")) text = "PLAY";
+  if (target.classList.contains("work-image-container")) text = "VIEW";
+  if (target.classList.contains("index-link")) text = "INDEX";
+  if (target.classList.contains("about-link")) text = "ABOUT";
+  if (target.classList.contains("work-link")) text = "WORK";
+  if (target.classList.contains("contact-link")) text = "CONTACT";
+  if (target.classList.contains("gclose")) text = "CLOSE";
+  if (target.classList.contains("gnext")) text = "NEXT";
+  if (target.classList.contains("gprev")) text = "PREVIOUS";
+
+  cursorText.textContent = text;
+  gsap.to(cursor, {
+    padding: "5px 14px",
+    borderRadius: "4px",
+    duration: 0.1,
+    overwrite: "auto",
+  });
+
+  gsap.to(cursorText, {
+    opacity: 1,
+    duration: 0.15,
+    overwrite: "auto",
+  });
+}, true);
+
+document.addEventListener("mouseleave", (e) => {
+  if (e.target.nodeType !== 1) return; 
+
+  const target = e.target.closest(".glightbox, .nav-link, .gclose, .gnext, .gprev");
+
+  if (!target) return;
+
+  gsap.to(cursor, {
+    padding: "4px",
+    borderRadius: "3px",
+    duration: 0.15,
+    overwrite: "auto",
+  });
+
+  gsap.to(cursorText, {
+    opacity: 0,
+    duration: 0.1,
+    overwrite: "auto",
+  });
+  cursorText.textContent = "";
+}, true);
+
+
 }
