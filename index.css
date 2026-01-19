@@ -50,7 +50,7 @@ img {
 
 .hero h1 {
     font-size: 70px;
-    line-height: 50px;
+    line-height: auto;
 }
 
 .hero .port {
@@ -242,8 +242,8 @@ footer .credits {
 
     .hero h1 {
         font-size: 19vw;
-        line-height: 10vh;
-        margin-top: 30px;
+        line-height: auto;
+        margin-top: 0px;
     }
 
     #heroCanvasIndex {
@@ -289,6 +289,15 @@ footer .credits {
 
 }
 
+@media (min-width: 850px) {
+    .hero h1 {
+        font-size: 19vw;
+        line-height: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
 /* =========================================================
    DESKTOP 
 ========================================================= */
@@ -298,8 +307,8 @@ footer .credits {
 
     .hero h1 {
         font-size: 14vw;
-        line-height: 13vh;
-        margin-top: 30px;
+        line-height: auto;
+        margin-top: 50px;
     }
 
     .about {
@@ -373,6 +382,11 @@ footer .credits {
         display: none;
     }
 
+    .port{
+        position: relative;
+        top: -5.5vw;
+    }
+
 
 
     #footer {
@@ -398,10 +412,6 @@ footer .credits {
             ". title title title title title title title title title"
             ". desc desc desc desc desc . date tags . "
             "nr img img img img img img img img img";
-        /* "title title title title . . . . . ."
-            "desc desc desc desc desc . date tags . view"
-            "img img img img img img img img img img"
-            "nr . . . . . . . . ."; */
     }
 
 
