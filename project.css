@@ -78,8 +78,9 @@ video {
 .image-text-3,
 .final-posters,
 .grid-gallery,
-.img-full, .img-half, .img-half-bachelor{
-    margin-top: 8vh;
+.img-full, .img-half, .img-half-bachelor,
+.process1, .process2,.process3{
+    margin-top: 12vh;
 }
 
 .img-full div,
@@ -164,8 +165,7 @@ div.grid.pluvia-letters>p {
 .image-text-2>div {
     grid-area: img;
     height: auto;
-    max-height: 80vh;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .image-text-2 :nth-child(2) {
@@ -301,6 +301,122 @@ footer {
     height: 2vh;
 }
 
+.process1, .process2{
+    grid-template-areas:
+    " text text text text text text"
+    "img img img img img img"
+    ;
+}
+
+
+.process1-text, .process2-text, .process3-text{
+        grid-area: text;
+    }
+    .process1-images, .process2-images{
+        grid-area: img;
+    }
+
+
+
+.process1-images {
+  display: flex;
+  align-items: flex-start;
+}
+
+.process1-images a {
+  flex: 1;
+  margin-right: -30px;
+}
+
+.process1-images a:last-child {
+  margin-right: 0;
+}
+
+.process1-images a:nth-child(1) { transform: translateY(0px); }
+.process1-images a:nth-child(2) { transform: translateY(30px); }
+.process1-images a:nth-child(3) { transform: translateY(10px); }
+.process1-images a:nth-child(4) { transform: translateY(50px); }
+.process1-images a:nth-child(5) { transform: translateY(20px); }
+
+.process1-images a img {
+  display: block;
+  width: 100%; 
+}
+
+
+
+
+
+
+.process1,.process2{
+    height: auto;
+    padding-bottom: 5vmax;
+}
+
+.process2-images div{
+    display: flex;
+}
+    
+.process2-images {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.process2-images a img {
+  display: block;
+  width: 105%; 
+}
+
+
+.process2-images > div:nth-child(1) > a:nth-child(1) { transform: translateY(0px); }
+.process2-images > div:nth-child(1) > a:nth-child(2) { transform: translateY(25%) translateX(-10%); }
+.process2-images > div:nth-child(1) > a:nth-child(3) { transform: translateY(10%) translateX(-15%); }
+
+
+.process2-images > div:nth-child(2) > a:nth-child(1) { transform: translateY(50%) translateX(0%); }
+.process2-images > div:nth-child(2) > a:nth-child(2) { transform: translateY(30%) translateX(0%); }
+.process2-images > div:nth-child(2) > a:nth-child(3) { transform: translateY(-10%) translateX(-5%);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.process3{
+    grid-template-areas:
+    " text text text text text text"
+    "img1 img1 img2 img2 img3 img3"
+    ;
+}
+
+
+
+
+.process3 a:nth-child(2) { grid-area: img1; }
+.process3 a:nth-child(3) { grid-area: img2; }
+.process3 a:nth-child(4) { grid-area: img3; }
+
+.process3 a img {
+  width: 100%;
+  display: block;
+}
+
+
 /* -------------------------------------------------------------
    TABLET
 ------------------------------------------------------------- */
@@ -328,8 +444,8 @@ footer {
 
     .image-text-2>div {
         grid-column: span 8;
-        height: 50vh;
-        overflow-y: scroll;
+        height: auto;
+        overflow: hidden;
     }
 
     .image-text-3 {
@@ -390,6 +506,21 @@ footer {
         font-size: 22vw;
         line-height: 17vw;
     }
+
+    .process1, .process2{
+    grid-template-areas:
+        "text text text text text text text text"
+        "img img img img img img img img";
+    }
+    .process3{
+    grid-template-areas:
+        "text text text text text text text text"
+        ". img1 img1 img2 img2 img3 img3 .";
+    }
+
+    .process2{
+    padding-bottom: 7vmax;
+}
 }
 
 
@@ -428,7 +559,6 @@ footer {
 
     .image-text-2>div {
         grid-area: img;
-        height: 80vh;
         overflow: hidden;
     }
 
@@ -516,4 +646,32 @@ footer {
         height: 4vh;
     }
 
+    .process1, .process2{
+    grid-template-areas:
+        " text text . img img img img img img img ";
+    }
+
+     .process3{
+    grid-template-areas:
+        "text text text . img1 img1 img2 img2 img3 img3"
+        
+    }
+    
+
+    .process2 {
+    height: 37vw;
+    padding: 0;
+    }
+
+    .process1{
+        padding: 0;
+    }
+    
+}
+
+
+@media only screen and (min-width: 1400px) {
+.process1{
+        padding-bottom: 3vw;
+    }
 }
