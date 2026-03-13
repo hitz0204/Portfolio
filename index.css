@@ -405,7 +405,7 @@ footer .credits {
         margin-top: 15vh;
         grid-template-areas:
             ". title title title title title title title title title"
-            ". desc desc desc desc desc . date tags . "
+            ". desc desc desc desc desc . date tags tags "
             "nr img img img img img img img img img";
     }
 
